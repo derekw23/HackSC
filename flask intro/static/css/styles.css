@@ -81,6 +81,7 @@ button:hover {
 
 .extra {
     grid-area: extra;
+    text-align: bottom;
     
 }
 
