@@ -61,10 +61,10 @@ button:hover {
     color: #ffffff;
     font-weight: bold;
     font-style: italic;
-    font-size: 10vw;
-    width: 100%;
-    height: 100%;
-    line-height: 100%;
+    font-size: 50%;
+    width: 50%;
+    height: 50%;
+    line-height: 50%;
     text-shadow: 5px 5px #4D768B
 }
 
