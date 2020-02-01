@@ -65,6 +65,7 @@ button:hover {
     width: 100%;
     height: 100%;
     line-height: 100%;
+    text-shadow: 5px 5px #4D768B
 }
 
 .text {
