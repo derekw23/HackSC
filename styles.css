@@ -76,7 +76,7 @@ body {
 .inputsmain {
     display: grid;
     grid-template-columns: 7% 86% 7%;
-    grid-template-rows: 7% 41% 4% 41% 7%;
+    grid-template-rows: 7% 42% 2% 42% 7%;
     grid-template-areas: 
         "a b c" 
         "d feel f"
@@ -130,6 +130,7 @@ body {
     background-color: #ffffff;
     border-radius: 10px;
     text-align: center;
+    height: 100%;
 }
 
 .inputs#feeling {
@@ -140,10 +141,18 @@ body {
     grid-area: emotion;
 }
 
+.inputs#other {
+    grid-area: b;
+}
+
 .inputs2#assign {
     grid-area: assign;
 }
 
 .inputs2#button {
     grid-area: button;
+}
+
+.inputs2#other {
+    grid-area: b;
 }
