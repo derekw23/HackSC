@@ -190,12 +190,14 @@ button:hover {
     grid-area: feel;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 30% 4% 30% 4% 32%;
+    grid-template-rows: 12% 4% 12% 4% 32% 4% 32%;
     grid-area:
         "feeling"
         "b"
         "sleep"
         "d"
+        "class"
+        "f"
         "emotion";
     height: 100%;
 }
@@ -236,6 +238,14 @@ button:hover {
 
 .inputs#other2 {
     grid-area: d;
+}
+
+.inputs#class {
+    grid-area: class;
+}
+
+.inputs#other3 {
+    grid-area: f;
 }
 
 .inputs#sleep {
