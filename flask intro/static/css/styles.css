@@ -57,7 +57,7 @@ button:hover {
 
 .title {
     grid-area: title;
-    text-align: center;
+    vertical-align: bottom;
     color: #ffffff;
     font-weight: bold;
     font-style: italic;
