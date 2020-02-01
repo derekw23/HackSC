@@ -30,12 +30,13 @@ button:hover {
 /* index page*/
 .main {
     display: grid;
-    grid-template-columns: 20% 60% 20%;
-    grid-template-rows: 20% 60% 20%;
+    grid-template-columns: 20% 60% 15% 5%;
+    grid-template-rows: 20% 60% 15% 5%;
     grid-template-areas:
-        "a title c"
-        "d descrip f"
-        "g link i";
+        "a title c d"
+        "e descrip g h"
+        "i link k l"
+        "m n o extra";
     height: 100vh;
 }
 
@@ -48,7 +49,7 @@ button:hover {
             "a b c d e"
             "f title h descrip j"
             "k title m link o"
-            "p q r s t";
+            "p q r s extra";
         height: 100vh;
         overflow: hidden;
     }
@@ -78,6 +79,10 @@ button:hover {
     text-align: center;
 }
 
+.extra {
+    grid-area: extra;
+    
+}
 
 /* calendar page*/
 .calendarmain {

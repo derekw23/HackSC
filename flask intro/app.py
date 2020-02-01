@@ -14,6 +14,9 @@ def inputs():
 def calendar():
     return render_template('calendar.html')
 
+@app.route('/about', methods=["GET"])
+def about():
+    return render_template('about.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
