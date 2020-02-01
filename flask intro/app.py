@@ -20,5 +20,9 @@ def calendar():
 def about():
     return render_template('about.html')
 
+@app.route('/HackSCHomePage', methods=["GET"])
+def HackSCHomePage():
+    return render_template('HackSCHomePage.html')
+
 if __name__ == '__main__':
     app.run(debug=True)

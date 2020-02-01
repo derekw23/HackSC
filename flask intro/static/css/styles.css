@@ -65,12 +65,13 @@ button:hover {
     width: 100%;
     height: 100%;
     line-height: 100%;
+    text-shadow: 5px 5px #4D768B
 }
 
 .text {
     grid-area: descrip;
     text-align: center;
-    color: #ffffff;
+    color: #4D768B;
     padding: 12% 0;
 }
 
@@ -82,7 +83,19 @@ button:hover {
 .extra {
     grid-area: extra;
     text-align: bottom;
-    
+    display: grid;
+    grid-template-rows: 50% 50%;
+    grid-template-areas:
+        "about"
+        "home";
+}
+
+#about {
+    grid-area: about;
+}
+
+#home {
+    grid-area: home;
 }
 
 /* calendar page*/
@@ -99,7 +112,7 @@ button:hover {
         "p download r"
         "s t u"
         "v again x"
-        "y z 1";
+        "y z extra";
     width: auto;
     height: 100vh;
 }
@@ -113,7 +126,7 @@ button:hover {
             "a b c d e f" 
             "g calendar i assignments assignments k" 
             "l calendar n download again q"
-            "r s t u v w";
+            "r s t u v extra";
         width: auto;
         height: 100vh;
     }
@@ -154,7 +167,7 @@ button:hover {
         "d feel f"
         "g h i"
         "j assignments l"
-        "m n o";
+        "m n extra";
     width: auto;
     height: 100vh;
 }
@@ -167,7 +180,7 @@ button:hover {
         grid-template-areas: 
             "a b c d e" 
             "f feel h assignments j" 
-            "k l m n o";
+            "k l m n extra";
         width: auto;
         height: 100vh;
     }
@@ -177,12 +190,14 @@ button:hover {
     grid-area: feel;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 30% 4% 30% 4% 32%;
+    grid-template-rows: 12% 4% 12% 4% 32% 4% 32%;
     grid-area:
         "feeling"
         "b"
         "sleep"
         "d"
+        "class"
+        "f"
         "emotion";
     height: 100%;
 }
@@ -223,6 +238,14 @@ button:hover {
 
 .inputs#other2 {
     grid-area: d;
+}
+
+.inputs#class {
+    grid-area: class;
+}
+
+.inputs#other3 {
+    grid-area: f;
 }
 
 .inputs#sleep {
