@@ -1,0 +1,25 @@
+body {
+    background-image: url(HackSCHomePageBackground.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    width: auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 3fr;
+    overflow: hidden;
+}
+
+div {
+    height: 100vh;
+    width: 100vw;
+}
+
+.main {
+    font-size: 12px;
+}
+
+.title {
+    text-align: center;
+}
