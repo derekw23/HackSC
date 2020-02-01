@@ -1,5 +1,10 @@
 # HackSC
 
+Random Ideas:
+    Google Calendar
+    Chrome Extension
+
+
 Task to Complete:
     Front End Tasks:
       Home Page
