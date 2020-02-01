@@ -1,1 +1,1 @@
-# HackSC
+# HackSC ya yeet
