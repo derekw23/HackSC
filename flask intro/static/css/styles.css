@@ -191,15 +191,14 @@ button:hover {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 12% 4% 12% 4% 32% 4% 32%;
-    grid-area:
+    grid-template-areas:
         "feeling"
         "b"
-        "sleep"
+        "emotion"
         "d"
-        "class"
-        "f"
-        "emotion";
+        "sleep";
     height: 100%;
+    
 }
 
 .inputs2 {
@@ -207,7 +206,7 @@ button:hover {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 72% 4% 10% 4% 10%;
-    grid-area:
+    grid-template-areas:
         "assign"
         "b"
         "google"
@@ -238,14 +237,6 @@ button:hover {
 
 .inputs#other2 {
     grid-area: d;
-}
-
-.inputs#class {
-    grid-area: class;
-}
-
-.inputs#other3 {
-    grid-area: f;
 }
 
 .inputs#sleep {
