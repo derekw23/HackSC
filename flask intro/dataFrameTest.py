@@ -1,6 +1,10 @@
+from flask import Flask, render_template, url_for, Blueprint
 import pandas as pd
 import numpy as np
 import math
+
+
+
 
 
 def makeSchedule(assignmentList, priorityList, workloadList, isSorted, happinessIndex):
@@ -12,7 +16,7 @@ def makeSchedule(assignmentList, priorityList, workloadList, isSorted, happiness
     # Converts the provided List Data into Series
     namesArray = np.array(assignmentList)
     priorityArray = np.array(priorityList)
-    workloadArray = np.array(priorityList)
+    workloadArray = np.array(workloadList)
     assignmentNamesSeries = pd.Series(namesArray, index=np.arange(0, len(assignmentList)))
     assignmentPrioritySeries = pd.Series(priorityArray, index=np.arange(0, len(priorityList)))
     assignmentWorkloadSeries = pd.Series(workloadArray, index=np.arange(0, len(workloadList)))
@@ -40,9 +44,20 @@ def makeSchedule(assignmentList, priorityList, workloadList, isSorted, happiness
 assignmentList = ['CSE 12 Homework','CSE 15L Lab','MMW 12 Essay','DSC 40A PA','MGT 12 Homework', "Derek Sux"]
 priorityList = [5, 4, 3, 2, 1, 7]
 workloadList = [2, 3, 2, 3, 2, 0]
-isSorted = 'Priority'
+isSorted = 'Workload'
 happinessIndex = 0
 
 #Sample Tables
 sampleTable = makeSchedule(assignmentList, priorityList, workloadList, isSorted, happinessIndex)
-sampleTable
+#print(sampleTable)
+
+
+simple_page = Blueprint('simple_page', __name__, template_folder='templates')
+@simple_page.route('/tester', methods = ("POST", "GET"))
+def html_table():
+
+    return render_template('tester.html',  tables=[sampleTable.to_html(classes='data')], titles=sampleTable.columns.values)
+
+
+
+

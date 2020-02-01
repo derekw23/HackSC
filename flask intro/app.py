@@ -1,6 +1,8 @@
 from flask import Flask, render_template, url_for
+from dataFrameTest import simple_page
 
 app = Flask(__name__)
+app.register_blueprint(simple_page)
 
 @app.route('/', methods=["GET"])
 def index():
