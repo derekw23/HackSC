@@ -1,9 +1,9 @@
 body {
-    /* for moving gif hopefully
-    background-image: url(“ajax-loader.gif”);
-    background-repeat: no-repeat;
-    */
-    background-color: #9DADB5;
+    background: url("/static/img/clouds but bigger.gif") no-repeat center center fixed; 
+    -webkit-background-size: cover; 
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
     font-family: arial;
     font-style: italic;
 }
