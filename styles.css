@@ -1,25 +1,149 @@
 body {
-    background-image: url(HackSCHomePageBackground.png);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 100vh;
-    width: auto;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 3fr;
-    overflow: hidden;
-}
-
-div {
-    height: 100vh;
-    width: 100vw;
+    background-color: #9DADB5;
+    font-family: arial;
 }
 
 .main {
-    font-size: 12px;
+    display: grid;
+    grid-template-columns: 20% 60% 20%;
+    grid-template-rows: 20% 60% 20%;
+    grid-template-areas:
+        "a title c"
+        "d descrip f"
+        "g link i";
+    height: 100vh;
 }
 
 .title {
+    grid-area: title;
     text-align: center;
+}
+
+.text {
+    grid-area: descrip;
+    text-align: center;
+}
+
+.link {
+    grid-area: link;
+    text-align: center;
+}
+
+
+.calendarmain {
+    display: grid;
+    grid-template-columns: 7% 86% 7%;
+    grid-template-rows: 7% 41% 4% 41% 7%;
+    grid-template-areas: 
+        "a b c" 
+        "d assignments f"
+        "g h i"
+        "j calendar l"
+        "m n o";
+    width: auto;
+    height: 100vh;
+}
+
+@media (min-width: 700px) {
+    .calendarmain {
+        display: grid;
+        grid-template-columns: 7% 20% 3% 63% 7%;
+        grid-template-rows: 7% 86% 7%;
+        grid-template-areas: 
+            "a b c d e" 
+            "f assignments h calendar j" 
+            "k l m n o";
+        width: auto;
+        height: 100vh;
+    }
+}
+
+.assignments {
+    grid-area: assignments;
+    background-color: #ffffff;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.calendar {
+    grid-area: calendar;
+    background-color: #ffffff;
+    border-radius: 10px;
+    text-align: center;
+}
+
+
+.inputsmain {
+    display: grid;
+    grid-template-columns: 7% 86% 7%;
+    grid-template-rows: 7% 41% 4% 41% 7%;
+    grid-template-areas: 
+        "a b c" 
+        "d feel f"
+        "g h i"
+        "j assignments l"
+        "m n o";
+    width: auto;
+    height: 100vh;
+}
+
+@media (min-width: 700px) {
+    .inputsmain {
+        display: grid;
+        grid-template-columns: 8% 38% 8% 38% 8%;
+        grid-template-rows: 7% 86% 7%;
+        grid-template-areas: 
+            "a b c d e" 
+            "f feel h assignments j" 
+            "k l m n o";
+        width: auto;
+        height: 100vh;
+    }
+}
+
+
+.inputs {
+    grid-area: feel;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 48% 4% 48%;
+    grid-areas:
+        "feeling"
+        "b"
+        "emotion";
+    height: 100%;
+}
+
+.inputs2 {
+    grid-area: assignments;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 86% 4% 10%;
+    grid-areas:
+        "assign"
+        "b"
+        "button";
+    height: 100%;
+}
+
+.box {
+    background-color: #ffffff;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.inputs#feeling {
+    grid-area: feeling;
+}
+
+.inputs#emotion {
+    grid-area: emotion;
+}
+
+.inputs2#assign {
+    grid-area: assign;
+}
+
+.inputs2#button {
+    grid-area: button;
 }
