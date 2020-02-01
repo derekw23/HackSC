@@ -83,7 +83,19 @@ button:hover {
 .extra {
     grid-area: extra;
     text-align: bottom;
-    
+    display: grid;
+    grid-template-rows: 50% 50%;
+    grid-template-areas:
+        "about"
+        "home";
+}
+
+#about {
+    grid-area: about;
+}
+
+#home {
+    grid-area: home;
 }
 
 /* calendar page*/
@@ -100,7 +112,7 @@ button:hover {
         "p download r"
         "s t u"
         "v again x"
-        "y z 1";
+        "y z extra";
     width: auto;
     height: 100vh;
 }
@@ -114,7 +126,7 @@ button:hover {
             "a b c d e f" 
             "g calendar i assignments assignments k" 
             "l calendar n download again q"
-            "r s t u v w";
+            "r s t u v extra";
         width: auto;
         height: 100vh;
     }
@@ -155,7 +167,7 @@ button:hover {
         "d feel f"
         "g h i"
         "j assignments l"
-        "m n o";
+        "m n extra";
     width: auto;
     height: 100vh;
 }
@@ -168,7 +180,7 @@ button:hover {
         grid-template-areas: 
             "a b c d e" 
             "f feel h assignments j" 
-            "k l m n o";
+            "k l m n extra";
         width: auto;
         height: 100vh;
     }
