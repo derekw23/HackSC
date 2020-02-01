@@ -12,7 +12,7 @@ def makeSchedule(assignmentList, priorityList, workloadList, isSorted, happiness
     # Converts the provided List Data into Series
     namesArray = np.array(assignmentList)
     priorityArray = np.array(priorityList)
-    workloadArray = np.array(priorityList)
+    workloadArray = np.array(workloadList)
     assignmentNamesSeries = pd.Series(namesArray, index=np.arange(0, len(assignmentList)))
     assignmentPrioritySeries = pd.Series(priorityArray, index=np.arange(0, len(priorityList)))
     assignmentWorkloadSeries = pd.Series(workloadArray, index=np.arange(0, len(workloadList)))
