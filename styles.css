@@ -1,6 +1,7 @@
 body {
     background-color: #9DADB5;
     font-family: arial;
+    font-style: italic;
 }
 
 button {
@@ -14,11 +15,14 @@ button {
     border: 0;
     box-shadow: none;
     text-align: center;
+    margin: 10px;
 }
 
 button:hover {
     background-color: #3C5C6C;
 }
+
+
 
 .main {
     display: grid;
@@ -62,7 +66,7 @@ button:hover {
     grid-area: descrip;
     text-align: center;
     color: #ffffff;
-    padding: 10% 0;
+    padding: 12% 0;
 }
 
 .link {
@@ -75,13 +79,17 @@ button:hover {
 .calendarmain {
     display: grid;
     grid-template-columns: 7% 86% 7%;
-    grid-template-rows: 7% 41% 4% 41% 7%;
+    grid-template-rows: 7% 45% 2% 25% 2% 5% 2% 5% 7%;
     grid-template-areas: 
         "a b c" 
-        "d assignments f"
+        "d calendar f"
         "g h i"
-        "j calendar l"
-        "m n o";
+        "j assignments l"
+        "m n o"
+        "p download r"
+        "s t u"
+        "v again x"
+        "y z 1";
     width: auto;
     height: 100vh;
 }
@@ -89,15 +97,23 @@ button:hover {
 @media (min-width: 700px) {
     .calendarmain {
         display: grid;
-        grid-template-columns: 7% 20% 3% 63% 7%;
-        grid-template-rows: 7% 86% 7%;
+        grid-template-columns: 7% 57% 3% 13% 13% 7%;
+        grid-template-rows: 7% 70% 16% 7%;
         grid-template-areas: 
-            "a b c d e" 
-            "f assignments h calendar j" 
-            "k l m n o";
+            "a b c d e f" 
+            "g calendar i assignments assignments k" 
+            "l calendar n download again q"
+            "r s t u v w";
         width: auto;
         height: 100vh;
     }
+}
+
+.calendar {
+    grid-area: calendar;
+    background-color: #ffffff;
+    border-radius: 10px;
+    text-align: center;
 }
 
 .assignments {
@@ -107,12 +123,16 @@ button:hover {
     text-align: center;
 }
 
-.calendar {
-    grid-area: calendar;
-    background-color: #ffffff;
-    border-radius: 10px;
+.download {
+    grid-area: download;
     text-align: center;
 }
+
+.again {
+    grid-area: again;
+    text-align: center;
+}
+
 
 
 .inputsmain {
@@ -147,10 +167,12 @@ button:hover {
     grid-area: feel;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 48% 4% 48%;
+    grid-template-rows: 30% 4% 30% 4% 32%;
     grid-areas:
         "feeling"
         "b"
+        "sleep"
+        "d"
         "emotion";
     height: 100%;
 }
@@ -159,12 +181,15 @@ button:hover {
     grid-area: assignments;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 80% 10% 10%;
+    grid-template-rows: 72% 4% 10% 4% 10%;
     grid-areas:
         "assign"
         "b"
+        "google"
+        "d"
         "button";
     height: 100%;
+    text-align: center;
 }
 
 .box {
@@ -178,16 +203,31 @@ button:hover {
     grid-area: feeling;
 }
 
-.inputs#emotion {
-    grid-area: emotion;
-}
-
 .inputs#other {
     grid-area: b;
 }
 
+.inputs#emotion {
+    grid-area: emotion;
+}
+
+.inputs#other2 {
+    grid-area: d;
+}
+
+.inputs#sleep {
+    grid-area: sleep;
+}
+
 .inputs2#assign {
     grid-area: assign;
+}
+.inputs2#google {
+    grid-area: google;
+}
+
+.inputs2#other2 {
+    grid-area: d;
 }
 
 .inputs2#button {
