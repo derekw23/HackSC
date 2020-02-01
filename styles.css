@@ -1,4 +1,8 @@
 body {
+    /* for moving gif hopefully
+    background-image: url(“ajax-loader.gif”);
+    background-repeat: no-repeat;
+    */
     background-color: #9DADB5;
     font-family: arial;
     font-style: italic;
@@ -23,7 +27,7 @@ button:hover {
 }
 
 
-
+/* index page*/
 .main {
     display: grid;
     grid-template-columns: 20% 60% 20%;
@@ -75,7 +79,7 @@ button:hover {
 }
 
 
-
+/* calendar page*/
 .calendarmain {
     display: grid;
     grid-template-columns: 7% 86% 7%;
@@ -134,7 +138,7 @@ button:hover {
 }
 
 
-
+/* input page*/
 .inputsmain {
     display: grid;
     grid-template-columns: 7% 86% 7%;
