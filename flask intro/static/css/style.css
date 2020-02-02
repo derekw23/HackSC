@@ -26,6 +26,13 @@ button:hover {
     background-color: #3C5C6C;
 }
 
+iframe {
+    width: 100%;
+    height: auto;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
 
 /* index page*/
 .main {
@@ -192,7 +199,7 @@ button:hover {
     grid-area: assignments;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 72% 4% 10% 4% 10%;
+    grid-template-rows: 62% 4% 20% 4% 10%;
     grid-area:
         "assign"
         "b"

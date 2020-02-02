@@ -53,7 +53,8 @@ def makeSchedule(assignmentList, priorityList, workloadList, dueDatesList, isSor
     
     daily = np.round(daily * 60, 0)
     schedule = schedule.assign(Workload_Per_Day_In_Min=daily)
-
+    schedule = schedule.assign(Workload_Per_Day_In_Min=daily)
+    schedule = schedule.replace([np.inf, -np.inf], np.nan).fillna(0)
     # Return the DataFrame Sorted
     if (isSorted == 'Priority'):
         return schedule.sort_values(by='Priority')
