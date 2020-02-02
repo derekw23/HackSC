@@ -1,12 +1,19 @@
-from flask import Flask, render_template, url_for, Blueprint, request
+from flask import Flask, render_template, url_for, Blueprint, request, jsonify
+import quickstart
+import requests
 import pandas as pd
 import numpy as np
 import datetime as dt
 import math
 
-
-
-
+assignmentList = []
+dueDates = []
+priorityList = []
+workloadList = []
+isSorted = ''
+happinessIndex = 0
+emotionalState = ''
+nightTime = []
 
 def makeSchedule(assignmentList, priorityList, workloadList, dueDatesList, isSorted, happinessIndex):
     """Make a DataFrame and Sorts Based on the User Input"""
@@ -76,39 +83,55 @@ def highPriorityWork(dataFrame):
     workloadInNum = dataFrame[dataFrame.get('Priority') >= 4].get('Workload_Per_Day_In_Min').sum()
     return workloadInNum
 
-#Proxy data to test the functions
-assignmentList = ['CSE 12 Homework','CSE 15L Lab','MMW 12 Essay','DSC 40A PA']
-dueDates = ['2/3/2020', '2/10/2020', '2/13/2020', '2/1/2020', ]
-priorityList = [5, 4, 3, 2]
-workloadList = [2, 3, 2, 3]
-isSorted = 'Until_Due'
-happinessIndex = 0
+def addAssignmentName(name):
+    assignmentList.append(name)
+
+def addPriority(priority):
+    priorityList.append(priority)
+
+def addWorkLoad(workload):
+    workloadList.append(workload)
+
+def addDate(date):
+    dueDates.append(date)
+
+def setHappiness(index):
+    happinessIndex = index
+
+def setEmotions(emotions):
+    emotionalState = emotions
+
+def setNightTime(weekday, weekend):
+    nightTime.append(weekday)
+    nightTime.append(weekend)
 
 #Sample Tables
 sampleTable = makeSchedule(assignmentList, priorityList, workloadList, dueDates, isSorted, happinessIndex)
+#workload = getWorkload(sampleTable)
+#highPriority = highPriorityWork(sampleTable)
 
-workload = getWorkload(sampleTable)
-highPriority = highPriorityWork(sampleTable)
 
+# Algorithm: Calculate priorities(on our own) based on dueDates and workload.dueDate
+# Assignments with more workload but same due date should be higher priority
+#Large workloads should be distributed
+#Less work depending on mental happines/emotions, or plan mental changing events
+#def planEvents():
 
 simple_page = Blueprint('simple_page', __name__, template_folder='templates')
-@simple_page.route('/postmethod', methods = ['POST'])
-def edit_html_table():
+@simple_page.route('/tester', methods = ("POST","GET"))
+def html_table():
 
-    names = request.form['js_names']
-    hours = request.form['js_hours']
-    prios = request.form['js_prios']
+    #print(requesst)
+    names = request.form['name']
+    #hours = request.GET['js_hours']
+    #prios = request.GET['js_prios']
 
-    sampleTable = makeSchedule(names, prios, hours, dueDates, 'Priority', happinessIndex)
+    #print(names)
 
+   # sampleTable = makeSchedule(names, prios, hours, dueDates, 'Priority', happinessIndex)
     return render_template('tester.html',  tables=[sampleTable.to_html(classes='data')], titles=sampleTable.columns.values)
 
-#@simple_page.route('tester', methods=['POST'])
-#def hello():
-#    first_name = request.form['first_name']
-#    last_name = request.form['last_name']
-#    return 'Hello %s %s have fun learning python <br/> <a href="/">Back Home</a>' % (first_name, last_name)
-
+events = quickstart.getEvents()
 
 
 

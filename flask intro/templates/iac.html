@@ -5,7 +5,7 @@
     <title>Enter Assignments</title>
 </head>
 <body>
-
+<!--
 <label for="AssName">Assignment Name</label>
 <input type = "text" id = "AssName">
 <label for="Hours">Hours</label>
@@ -20,7 +20,7 @@
 </p>
 
 <p>
-    <input type="submit" value = "Done" id = "done" onclick = "displayLists()">
+    <input type="submit" value = "Done" onclick = "displayLists()">
 </p>
 
 <p>
@@ -34,7 +34,25 @@
 <p>
     <output name = "prioList" id = "prioL"></output>
 </p>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<p>
+    <input type="button" class="button_active" onclick="location.href='/tester';" value = "Go Test" id = "done" />
+</p>
+-->
+<form name = inputActivities action = "/tester" method="post">
+    <label>Name:</label>
+    <input type="text" name = "name">
+    <label>Hours:</label>
+    <input type="number" name = "hours">
+    <label>Priority:</label>
+    <input type="number" name="priority">
+    <label>Date:</label>
+    <input type="date" name="date">
+
+    <input type="submit" value="submit">
+</form>
+
+
 <script>
     //let List = require("collections/list");
     let names = [];
@@ -77,9 +95,10 @@
 
     }
 
-    $(document).ready(function(){
+  /*  $(document).ready(function(){
         $("#done").click(function(){
             $.post("dataFrameTest.py", {
+                js_name: "joe",
                 js_names: names,
                 js_hours: hours,
                 js_prios: prios
@@ -88,10 +107,9 @@
             });
         });
     });
-
+*/
 </script>
 
 </body>
 </html>
 
-#add go to tester.html button
