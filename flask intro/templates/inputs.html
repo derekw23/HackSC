@@ -14,7 +14,8 @@
   <div class="inputsmain">
     <div class="inputs">
       <form action="{{ url_for('addfeel') }}" method="post">
-        <div id="feeling" class="box">how are you feeling today:<br><input type="text" name="feel" value="10"><br>
+        <div id="feeling" class="box">how are you feeling today:<br>
+        <input type="number" min="1" max="10" name="feel" value="10"><br>
         <input type="submit" value="submit" /></form><br></div>
         <div id="other"></div>
       <form action="{{ url_for('addemotion') }}" method="post">
@@ -29,16 +30,16 @@
         <div id="other2"></div>
       <form action="{{ url_for('addsleep') }}" method="post">
         <div id="sleep" class="box">block off your sleeping schedule:<br>
-          <input type="text" name="weekday" value="10:00pm" ><br>
-          <input type="text" name="weekend" value="12:00am" ><br>
+          <input type="time" name="weekday" value="10:00 PM" ><br>
+          <input type="time" name="weekend" value="12:00 AM" ><br>
           <input type="submit" value="submit" /></form></div>
     </div>
     <div class="inputs2">
       <form action="{{ url_for('addassign') }}" method="post">
-        <div id="assign" class="box">assignments & their priorities:<br>
+        <div id="assign" class="box">assignments (name, workload, due date):<br>
           <input type="text" name="aname" value="None"><br>
-          <input type="text" name="aworkload" value="None"><br>
-          <input type="text" name="adate" value="None"><br>
+          <input type="number" name="aworkload" value="None"><br>
+          <input type="date" name="adate" value="None"><br>
       <input type="submit" value="submit" /></form>
         </div>
         <div id="another"></div>
