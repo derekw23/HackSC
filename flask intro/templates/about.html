@@ -13,22 +13,29 @@
 <body>
   <div class="inputsmain">
     <div class="inputs">
-        <div id="feeling"><div class="box"><form>how are you feeling today:<br><input type="text" name="feel" value="10"><br></div></div>
+      <form action="{{ url_for('addfeel') }}" method="post">
+        <div id="feeling"><div class="box">how are you feeling today:<br><input type="text" name="feel" value="10"><input type="submit" value="Submit" />
+      </form><br></div></div>
         <div id="other"></div>
-        <div id="emotion"><div class="box"><form>emotional state today:<br>
-          <select>
+      <form action="{{ url_for('addemotion') }}" method="post">
+        <div id="emotion"><div class="box">emotional state today:<br>
+          <select name="emotion">
             <option value="happy">happy</option>
             <option value="depressed">depressed</option>
             <option value="anxious">anxious</option>
             <option value="nervous">nervous</option>
-          </select><br></div></div>
+          </select>
+          <input type="submit" value="Submit" /></form><br></div></div>
         <div id="other2"></div>
-        <div id="sleep"><div class="box"><form>block off your sleeping schedule:<br>
+      <form action="{{ url_for('addsleep') }}" method="post">
+        <div id="sleep"><div class="box">block off your sleeping schedule:<br>
           <input type="text" name="weekday" value="10:00pm"><br>
-          <input type="text" name="weekend" value="12:00am"><br></div></div>
+          <input type="text" name="weekend" value="12:00am">
+          <input type="submit" value="Submit" /></form></div></div>
     </div>
     <div class="inputs2">
-        <div id="assign"><div class="box"><form>assignments & their priorities:<br>
+      <form action="{{ url_for('addassign') }}" method="post">
+        <div id="assign"><div class="box">assignments & their priorities:<br>
           <input type="text" name="assignment1" value="None"><br>
           <input type="text" name="assignment2" value="None"><br>
           <input type="text" name="assignment3" value="None"><br>
@@ -36,20 +43,13 @@
           <input type="text" name="assignment5" value="None"><br>
           <input type="text" name="assignment6" value="None"><br>
           <input type="text" name="assignment7" value="None"><br>
-          <table style="width:80%">
-            <tr><th>current stuff:</th></tr>
-            <tr><td></td></tr>
-            <tr><td></td></tr>
-            <tr><td></td></tr>
-            <tr><td></td></tr>
-            <tr><td></td></tr>
-            <tr><td></td></tr>
-            <tr><td></td></tr>
-          </table>
+      <input type="submit" value="Submit" /></form>
           </div>
         </div>
         <div id="other"></div>
-        <div id="google"><div class="box"><form>google calendar email:<br><input type="text" name="feel"><br></div></div>
+      <form action="{{ url_for('addgoogle') }}" method="post">
+        <div id="google"><div class="box">google calendar email:<br><input type="text" name="google">
+      <input type="submit" value="Submit" /></form><br></div></div>
         <div id="other2"></div>
         <div id="button"><button type="button">submit</button></div>
     </div>
