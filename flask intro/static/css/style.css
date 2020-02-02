@@ -162,7 +162,7 @@ iframe {
         "a b c" 
         "d feel f"
         "g h i"
-        "j assignments l"
+        "j assignment l"
         "m n extra";
     width: auto;
     height: 100vh;
@@ -175,7 +175,7 @@ iframe {
         grid-template-rows: 10% 80% 10%;
         grid-template-areas: 
             "a b c d e" 
-            "f feel h assignments j" 
+            "f feel h assignment j" 
             "k l m n extra";
         width: auto;
         height: 100vh;
@@ -197,7 +197,7 @@ iframe {
 }
 
 .inputs2 {
-    grid-area: assignments;
+    grid-area: assignment;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 32% 4% 30% 4% 30%;
@@ -208,14 +208,6 @@ iframe {
         "z"
         "button";
     height: 100%;
-}
-
-.box {
-    background-color: #ffffff;
-    opacity: 0.5;
-    border-radius: 5px;
-    text-align: center;
-    height: 1vh;
 }
 
 .inputs#feeling {
@@ -240,4 +232,12 @@ iframe {
 
 .inputs2#button {
     grid-area: button;
+}
+
+.box {
+    background-color: #ffffff;
+    border-radius: 5px;
+    text-align: center;
+    height: 80%;
+    padding-top: 10%;
 }
