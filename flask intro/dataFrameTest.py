@@ -1,6 +1,7 @@
-from flask import Flask, render_template, url_for, Blueprint
+from flask import Flask, render_template, url_for, Blueprint, request
 import pandas as pd
 import numpy as np
+import datetime as dt
 import math
 
 
@@ -90,10 +91,22 @@ highPriority = highPriorityWork(sampleTable)
 
 
 simple_page = Blueprint('simple_page', __name__, template_folder='templates')
-@simple_page.route('/tester', methods = ("POST", "GET"))
-def html_table():
+@simple_page.route('/postmethod', methods = ['POST'])
+def edit_html_table():
+
+    names = request.form['js_names']
+    hours = request.form['js_hours']
+    prios = request.form['js_prios']
+
+    sampleTable = makeSchedule(names, prios, hours, dueDates, 'Priority', happinessIndex)
 
     return render_template('tester.html',  tables=[sampleTable.to_html(classes='data')], titles=sampleTable.columns.values)
+
+#@simple_page.route('tester', methods=['POST'])
+#def hello():
+#    first_name = request.form['first_name']
+#    last_name = request.form['last_name']
+#    return 'Hello %s %s have fun learning python <br/> <a href="/">Back Home</a>' % (first_name, last_name)
 
 
 

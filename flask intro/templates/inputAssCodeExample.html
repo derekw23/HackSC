@@ -8,10 +8,10 @@
 
 <label for="AssName">Assignment Name</label>
 <input type = "text" id = "AssName">
-<label for="hours">Hours</label>
-<input type = "number" id = "hours">
-<label for="prio">Priority</label>
-<input type = "number" id = "prio">
+<label for="Hours">Hours</label>
+<input type = "number" id = "Hours">
+<label for="Prio">Priority</label>
+<input type = "number" id = "Prio">
 
 <input type = "submit" onclick= "getAssName()">
 
@@ -19,17 +19,79 @@
     <output name = "AssNameOut" for= "AssName" id = "out"></output>
 </p>
 
+<p>
+    <input type="submit" value = "Done" id = "done" onclick = "displayLists()">
+</p>
 
+<p>
+    <output name = "nameList" id = "names"></output>
+</p>
+
+<p>
+    <output name = "hourList" id = "hoursL"></output>
+</p>
+
+<p>
+    <output name = "prioList" id = "prioL"></output>
+</p>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script>
-    function getAssName()
-    var name = document.getElementById("AssName").value;
-    var hours = document.getElementById("hours").value;
-    var prio = document.getElementById("prio").value;
+    //let List = require("collections/list");
+    let names = [];
+    let hours = [];
+    let prios = [];
 
-    document.getElementById("out").value = "The assignment " + name + " will take " + hours + " hours with priority " + prio + "!";
+    function getAssName(){
+        let name = document.getElementById("AssName").value;
+        let hour = document.getElementById("Hours").value;
+        let prio = document.getElementById("Prio").value;
+
+        document.getElementById("out").value = "The assignment " + name + " will take " + hour + " hours with priority " + prio + "!";
+
+        names.push(name);
+        hours.push(hour);
+        prios.push(prio);
     }
+
+    function displayLists() {
+
+        let nameString = "The names are: ";
+        for(let i = 0; i < names.length; i++){
+            nameString += (names[i] + " ");
+        }
+
+        let hourString = "The hours are: ";
+        for(let i = 0; i < hours.length; i++){
+            hourString += (hours[i] + " ");
+        }
+
+        let prioString = "The prios are: ";
+        for(let i = 0; i < prios.length; i++){
+            prioString += (prios[i] + " ");
+        }
+
+
+        document.getElementById("names").value = nameString;
+        document.getElementById("hoursL").value = hourString;
+        document.getElementById("prioL").value = prioString;
+
+    }
+
+    $(document).ready(function(){
+        $("#done").click(function(){
+            $.post("dataFrameTest.py", {
+                js_names: names,
+                js_hours: hours,
+                js_prios: prios
+            }, function(data, status){
+
+            });
+        });
+    });
+
 </script>
 
 </body>
 </html>
 
+#add go to tester.html button
