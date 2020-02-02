@@ -27,12 +27,18 @@ button:hover {
     font-style: italic;
 }
 
-iframe {
+table {
     width: 100%;
-    height: auto;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    height: 100%;
+    background-color: #ffffff;
+    border: 1px solid black;
+    border-collapse: collapse;
+    text-align: center;
+    padding: 2px;
+    overflow-x: auto;
+    table-layout: fixed;
+    
+
 }
 
 /* index page*/
