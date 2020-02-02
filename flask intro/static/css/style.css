@@ -40,11 +40,9 @@ table {
 tr, th, td{
     border: 1px solid black;
     border-collapse: collapse;
+    height: 20%;
 }
 
-th {
-    height: 10%;
-}
 
 /* index page*/
 .main {

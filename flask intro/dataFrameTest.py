@@ -11,8 +11,8 @@ dueDates = []
 priorityList = []
 workloadList = []
 isSorted = ''
-happinessIndex = 0
-emotionalState = ''
+happinessIndex = 10
+emotionalState = 'happy'
 nightTime = []
 
 def makeSchedule(assignmentList, priorityList, workloadList, dueDatesList, isSorted, happinessIndex):
@@ -106,7 +106,7 @@ def setNightTime(weekday, weekend):
     nightTime.append(weekend)
 
 #Sample Tables
-sampleTable = makeSchedule(assignmentList, priorityList, workloadList, dueDates, isSorted, happinessIndex)
+#sampleTable = makeSchedule(assignmentList, priorityList, workloadList, dueDates, isSorted, happinessIndex)
 #workload = getWorkload(sampleTable)
 #highPriority = highPriorityWork(sampleTable)
 
@@ -125,9 +125,11 @@ def html_table():
     for e in events:
         if "dateTime" in e["start"]:
             hour = e['start'].get('dateTime')
-            evDict[e["summary"]]=hour
-
-    return evDict
+            day = hour[5:7]
+            hour2, hour1 = hour[11:].split("-")
+            hour2 = hour2[0:5]
+            evDict[e["summary"]]= (hour1, hour2, day)
+    return evDict, assignmentList, workloadList, happinessIndex, emotionalState
 
 
 

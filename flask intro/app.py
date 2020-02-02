@@ -73,7 +73,7 @@ def addassign():
     assigns.append(date)
     assignments.append(assigns)
     print(assignments)
-    return render_template('inputs.html', a1=a1, a2=a2, a3=a3, a4=a4)
+    return render_template('inputs.html', name=name, workload=workload, date=date)
 
 @app.route('/addgoogle', methods = ['POST', 'GET'])
 def addgoogle():
@@ -84,8 +84,8 @@ def addgoogle():
 
 @app.route('/nextpage', methods = ['POST', 'GET'])
 def nextpage():
-    ev = dft.html_table()
-    return render_template('calendar.html', ev=ev)
+    ev, al, wl, hi, es = dft.html_table()
+    return render_template('calendar.html', ev=ev, al=al, wl=wl, hi=hi, es=es)
 
 
 if __name__ == '__main__':

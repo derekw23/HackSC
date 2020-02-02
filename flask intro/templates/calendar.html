@@ -87,10 +87,12 @@
         <tr>
           <th>Sunday</th><th>Monday</th><th>Tuesday</th><th>Wednesday</th><th>Thursday</th><th>Friday</th><th>Saturday</th>
         </tr>
-        <tr>{% for e in ev %}<td>{{(e, ev[e][12:])}}<br></td>{% endfor %}</tr>
+        <tr>{% for e in ev %}<td>class: {{e}}<br><br>time: {{ev[e][0]}} to {{ev[e][1]}}<br></td>{% endfor %}</tr>
+        <tr>{% for a in al %}<td>{{a}}<br></td>{% endfor %}</tr>
       </table>
     </div>
-    <div class="assignments">assignments list<br><br>{% for e in ev %}{{e,ev[e]}}<br><br>{% endfor %}</div>
+    <div class="assignments">today's happiness index: {{hi}} <br>today's emotional state: {{es}} <br>
+    <br>assignments list: <br>{% for a in al %}{% for w in wl %}<br>{{a}}:{{w}} hour(s)<br>{% endfor %}{% endfor %}</div>
     <div class="download"><button type="button">email this to me</button></a></div>
     <div class="again"><a href="inputs"><button type="button">try it again</button></a></div>
     <div class="extra">
