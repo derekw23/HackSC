@@ -11,8 +11,11 @@ from email.mime.text import MIMEText
 subject = "Your Personal Calendar"
 body = "Attached is your recommended personal schedule for the week based on your inputs:"
 sender_email = "mhcalendarscheduling@gmail.com"
-receiver_email = "" #need to take this variable from google calendar import
+receiver_email = "" 
 password = "hacksc2020"
+
+def email_name(name):
+    receiver_email = name
 
 message = MIMEMultipart()
 message["From"] = sender_email
@@ -21,7 +24,7 @@ message["Subject"] = subject
 
 message.attach(MIMEText(body, "plain"))
 
-filename = "" #need to get this from calendar page
+filename = "flask intro/templates/calendar.html"
 
 with open(filename, "rb") as attachment:
     part = MIMEBase("application", "octet-stream")
