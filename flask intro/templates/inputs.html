@@ -7,7 +7,6 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Your Inputs</title>
   <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
 
 
@@ -15,7 +14,7 @@
   <div class="inputsmain">
     <div class="inputs">
       <form action="{{ url_for('addfeel') }}" method="post">
-        <div id="feeling"><div class="box">how are you feeling today:<br><input type="text" name="feel" value="10">
+        <div id="feeling"><div class="box">how are you feeling today:<br><input type="text" name="feel" value="10"><br>
         <input type="submit" value="submit" /></form><br></div></div>
         <div id="other"></div>
       <form action="{{ url_for('addemotion') }}" method="post">
@@ -25,7 +24,7 @@
             <option value="depressed">depressed</option>
             <option value="anxious">anxious</option>
             <option value="nervous">nervous</option>
-          </select>
+          </select><br>
           <input type="submit" value="submit" /></form><br></div></div>
         <div id="other2"></div>
       <form action="{{ url_for('addsleep') }}" method="post">
@@ -37,21 +36,20 @@
     <div class="inputs2">
       <form action="{{ url_for('addassign') }}" method="post">
         <div id="assign"><div class="box">assignments & their priorities:<br>
-          <input type="text" name="aname" value="None"placeholder=".col-xs-2"><br>
-          <input type="text" name="apriority" value="None"placeholder=".col-xs-2"><br>
-          <input type="text" name="aworkload" value="None"placeholder=".col-xs-2"><br>
-          <input type="text" name="adate" value="None"placeholder=".col-xs-2"><br>
+          <input type="text" name="aname" value="None"><br>
+          <input type="text" name="aworkload" value="None"><br>
+          <input type="text" name="adate" value="None"><br>
       <input type="submit" value="submit" /></form>
           </div>
         </div>
-        <div id="other"></div>
+        <div id="another"></div>
       <form action="{{ url_for('addgoogle') }}" method="post">
-        <div id="google"><div class="box">google calendar email:<br><input type="text" name="google">
+        <div id="google"><div class="box">google calendar email:<br><input type="text" name="google"><br>
       <input type="submit" value="submit" /></form><br></div></div>
-        <div id="other2"></div>
+        <div id="another2"></div>
         <div id="button"><a href="calendar"><button type="button">submit</button></a></div>
     </div>
-    <div class="extra"><a id="about" href="about">about</a>
+    <div class="extra">
     <a id="home" href="HackSCHomePage">home</a></div>
   </div>
 </body>

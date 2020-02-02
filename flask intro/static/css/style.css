@@ -24,6 +24,7 @@ button {
 
 button:hover {
     background-color: #3C5C6C;
+    font-style: italic;
 }
 
 iframe {
@@ -107,7 +108,7 @@ iframe {
         "p download r"
         "s t u"
         "v again x"
-        "y z 1";
+        "y z extra";
     width: auto;
     height: 100vh;
 }
@@ -121,7 +122,7 @@ iframe {
             "a b c d e f" 
             "g calendar i assignments assignments k" 
             "l calendar n download again q"
-            "r s t u v w";
+            "r s t u v extra";
         width: auto;
         height: 100vh;
     }
@@ -156,13 +157,13 @@ iframe {
 .inputsmain {
     display: grid;
     grid-template-columns: 7% 86% 7%;
-    grid-template-rows: 7% 42% 2% 42% 7%;
+    grid-template-rows: 7% 40% 6% 40% 7%;
     grid-template-areas: 
         "a b c" 
         "d feel f"
         "g h i"
         "j assignments l"
-        "m n o";
+        "m n extra";
     width: auto;
     height: 100vh;
 }
@@ -170,12 +171,12 @@ iframe {
 @media (min-width: 700px) {
     .inputsmain {
         display: grid;
-        grid-template-columns: 8% 38% 8% 38% 8%;
-        grid-template-rows: 7% 86% 7%;
+        grid-template-columns: 10% 36% 8% 36% 10%;
+        grid-template-rows: 10% 80% 10%;
         grid-template-areas: 
             "a b c d e" 
             "f feel h assignments j" 
-            "k l m n o";
+            "k l m n extra";
         width: auto;
         height: 100vh;
     }
@@ -186,7 +187,7 @@ iframe {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 30% 4% 30% 4% 32%;
-    grid-area:
+    grid-template-areas:
         "feeling"
         "b"
         "sleep"
@@ -199,8 +200,8 @@ iframe {
     grid-area: assignments;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 62% 4% 20% 4% 10%;
-    grid-area:
+    grid-template-rows: 32% 4% 30% 4% 30%;
+    grid-template-areas:
         "assign"
         "b"
         "google"
@@ -212,25 +213,18 @@ iframe {
 
 .box {
     background-color: #ffffff;
+    opacity: 0.5;
     border-radius: 5px;
     text-align: center;
-    height: 100%;
+    height: 1vh;
 }
 
 .inputs#feeling {
     grid-area: feeling;
 }
 
-.inputs#other {
-    grid-area: b;
-}
-
 .inputs#emotion {
     grid-area: emotion;
-}
-
-.inputs#other2 {
-    grid-area: d;
 }
 
 .inputs#sleep {
@@ -240,18 +234,11 @@ iframe {
 .inputs2#assign {
     grid-area: assign;
 }
+
 .inputs2#google {
     grid-area: google;
 }
 
-.inputs2#other2 {
-    grid-area: d;
-}
-
 .inputs2#button {
     grid-area: button;
-}
-
-.inputs2#other {
-    grid-area: b;
 }

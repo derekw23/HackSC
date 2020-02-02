@@ -1,9 +1,8 @@
 from flask import Flask, render_template, url_for, request
-from dataFrameTest import simple_page
+import dataFrameTest as dft
 
 app = Flask(__name__)
-app.register_blueprint(simple_page)
-#help = []
+#app.register_blueprint(simple_page)
 feels = []
 emotions = []
 sleeps = []
@@ -33,6 +32,7 @@ def HackSCHomePage():
 @app.route('/addfeel', methods = ['POST', 'GET'])
 def addfeel():
     feel = request.form["feel"]
+    dft.setHappiness(feel)
     feels.append(feel)
     print(feels)
     return render_template('inputs.html', feel=feel)
@@ -40,6 +40,7 @@ def addfeel():
 @app.route('/addemotion', methods = ['POST', 'GET'])
 def addemotion():
     emotion = request.form["emotion"]
+    dft.setEmotions(emotion)
     emotions.append(emotion)
     print(emotions)
     return render_template('inputs.html', emotion=emotion)
@@ -51,6 +52,7 @@ def addsleep():
     sleep.append(weekday)
     weekend = request.form["weekend"]
     sleep.append(weekend)
+    dft.setNightTime(weekday, weekend)
     sleeps.append(sleep)
     print(sleeps)
     return render_template('inputs.html', weekday=weekday, weekend=weekend)
@@ -59,12 +61,13 @@ def addsleep():
 def addassign():
     assigns = []
     name = request.form["aname"]
+    dft.addAssignmentName(name)
     assigns.append(name)
-    priority = request.form["apriority"]
-    assigns.append(priority)
     workload = request.form["aworkload"]
+    dft.addWorkLoad(workload)
     assigns.append(workload)
     date = request.form["adate"]
+    dft.addDate(date)
     assigns.append(date)
     assignments.append(assigns)
     print(assignments)
