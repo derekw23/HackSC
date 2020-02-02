@@ -118,11 +118,16 @@ sampleTable = makeSchedule(assignmentList, priorityList, workloadList, dueDates,
 #def planEvents():
 
 simple_page = Blueprint('simple_page', __name__, template_folder='templates')
-@simple_page.route('/calendar', methods = ("POST","GET"))
+#@simple_page.route('/calendar', methods = ("POST","GET"))
 def html_table():
-
+    evDict = {}
     events = quickstart.getEvents()
-    return render_template('calendar.html',  ev=events)
+    for e in events:
+        if "dateTime" in e["start"]:
+            hour = e['start'].get('dateTime')
+            evDict[e["summary"]]=hour
+
+    return evDict
 
 
 

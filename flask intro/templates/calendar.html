@@ -1,7 +1,13 @@
 <!DOCTYPE html>
 <html>
 
-<script>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Your Calendar</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+  <script type="text/javascript">
   function inputEvents(ev){
     let array =[];
 
@@ -71,14 +77,6 @@
   }
 
 </script>
-
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Your Calendar</title>
-  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 
 
@@ -87,10 +85,12 @@
     <div class="calendar">
       <table>
         <tr>
-          <th>Sunday</th><th>Monday</th><th>Tuesday</th><th>Wednesday</th><th>Thursday</th><th>Friday</th><th>Saturday</th>{{(ev)['summary']}}<th>
+          <th>Sunday</th><th>Monday</th><th>Tuesday</th><th>Wednesday</th><th>Thursday</th><th>Friday</th><th>Saturday</th>
+        </tr>
+        <tr>{% for e in ev %}<td>{{(e, ev[e][12:])}}<br></td>{% endfor %}</tr>
       </table>
     </div>
-    <div class="assignments">assignments list</div>
+    <div class="assignments">assignments list<br><br>{% for e in ev %}{{e,ev[e]}}<br><br>{% endfor %}</div>
     <div class="download"><button type="button">email this to me</button></a></div>
     <div class="again"><a href="inputs"><button type="button">try it again</button></a></div>
     <div class="extra">

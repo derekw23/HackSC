@@ -82,6 +82,11 @@ def addgoogle():
     print(googles)
     return render_template('inputs.html', google=google)
 
+@app.route('/nextpage', methods = ['POST', 'GET'])
+def nextpage():
+    ev = dft.html_table()
+    return render_template('calendar.html', ev=ev)
+
 
 if __name__ == '__main__':
     app.run(debug=True)

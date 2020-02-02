@@ -31,8 +31,8 @@ table {
     width: 100%;
     height: 100%;
     background-color: #ffffff;
-    border: 2px solid black;
-    /*border-collapse: collapse;*/
+    border: 1px solid black;
+    border-collapse: collapse;
     text-align: center;
     padding: 2px;
     overflow-x: auto;
