@@ -190,9 +190,9 @@ iframe {
     grid-template-areas:
         "feeling"
         "b"
-        "sleep"
+        "emotion"
         "d"
-        "emotion";
+        "sleep";
     height: 100%;
 }
 
@@ -203,12 +203,11 @@ iframe {
     grid-template-rows: 32% 4% 30% 4% 30%;
     grid-template-areas:
         "assign"
-        "b"
+        "y"
         "google"
-        "d"
+        "z"
         "button";
     height: 100%;
-    text-align: center;
 }
 
 .box {
