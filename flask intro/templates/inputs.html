@@ -15,8 +15,8 @@
   <div class="inputsmain">
     <div class="inputs">
       <form action="{{ url_for('addfeel') }}" method="post">
-        <div id="feeling"><div class="box">how are you feeling today:<br><input type="text" name="feel" value="10"class="form-control">
-        <input type="submit" value="submit" class="btn btn-info btn-sm"/></form><br></div></div>
+        <div id="feeling"><div class="box">how are you feeling today:<br><input type="text" name="feel" value="10">
+        <input type="submit" value="submit" /></form><br></div></div>
         <div id="other"></div>
       <form action="{{ url_for('addemotion') }}" method="post">
         <div id="emotion"><div class="box">emotional state today:<br>
@@ -26,32 +26,30 @@
             <option value="anxious">anxious</option>
             <option value="nervous">nervous</option>
           </select>
-          <input type="submit" value="submit" class="btn btn-info btn-sm" /></form><br></div></div>
+          <input type="submit" value="submit" /></form><br></div></div>
         <div id="other2"></div>
       <form action="{{ url_for('addsleep') }}" method="post">
         <div id="sleep"><div class="box">block off your sleeping schedule:<br>
-          <div class="col-xs-2">
-            <input type="text" name="weekday" value="10:00pm" class="form-control"><br>
-            <input type="text" name="weekend" value="12:00am" class="form-control"><br>
-            <input type="submit" value="submit" class="btn btn-info btn-sm"/></form></div></div>
-          </div>
+          <input type="text" name="weekday" value="10:00pm" ><br>
+          <input type="text" name="weekend" value="12:00am" ><br>
+          <input type="submit" value="submit" /></form></div></div>
     </div>
     <div class="inputs2">
       <form action="{{ url_for('addassign') }}" method="post">
         <div id="assign"><div class="box">assignments & their priorities:<br>
-          <input type="text" name="aname" value="None"class="form-control form-control-sm"placeholder=".col-xs-2"><br>
-          <input type="text" name="apriority" value="None"class="form-control form-control-sm"placeholder=".col-xs-2"><br>
-          <input type="text" name="aworkload" value="None"class="form-control form-control-sm"placeholder=".col-xs-2"><br>
-          <input type="text" name="adate" value="None"class="form-control form-control-sm"placeholder=".col-xs-2"><br>
-      <input type="submit" value="submit" class="btn btn-info btn-sm"/></form>
+          <input type="text" name="aname" value="None"placeholder=".col-xs-2"><br>
+          <input type="text" name="apriority" value="None"placeholder=".col-xs-2"><br>
+          <input type="text" name="aworkload" value="None"placeholder=".col-xs-2"><br>
+          <input type="text" name="adate" value="None"placeholder=".col-xs-2"><br>
+      <input type="submit" value="submit" /></form>
           </div>
         </div>
         <div id="other"></div>
       <form action="{{ url_for('addgoogle') }}" method="post">
-        <div id="google"><div class="box">google calendar email:<br><input type="text" name="google"class="form-control form-control-sm">
-      <input type="submit" value="submit" class="btn btn-info btn-sm"/></form><br></div></div>
+        <div id="google"><div class="box">google calendar email:<br><input type="text" name="google">
+      <input type="submit" value="submit" /></form><br></div></div>
         <div id="other2"></div>
-        <div id="button"><a href="calendar"><button type="button"class="btn btn-info btn-sm">submit</button></a></div>
+        <div id="button"><a href="calendar"><button type="button">submit</button></a></div>
     </div>
     <div class="extra"><a id="about" href="about">about</a>
     <a id="home" href="HackSCHomePage">home</a></div>
