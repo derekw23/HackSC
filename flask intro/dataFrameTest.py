@@ -7,11 +7,33 @@ import math
 
 
 
-def makeSchedule(assignmentList, priorityList, workloadList, isSorted, happinessIndex):
+def makeSchedule(assignmentList, priorityList, workloadList, dueDatesList, isSorted, happinessIndex):
     """Make a DataFrame and Sorts Based on the User Input"""
+    
+    dates = []
+    for date in dueDatesList:
+        proxyTime = date.split('/')
+        dueDate = dt.date(int(proxyTime[2]), int(proxyTime[0]), int(proxyTime[1]))
+        dates.append(dueDate)
+
+    daysAway = []
+
+    today = dt.datetime.now().date()
+
+    for d in dates:
+        untilDue = d - today
+        daysAway.append(untilDue.days)
+
+    dates = np.array(daysAway)
+    datesSeries = pd.Series(dates, index=np.arange(0, len(dates)))
+    
 
     # Make a default DataFrame
     schedule = pd.DataFrame()
+    
+    #Variables and Ideas 
+    today = dt.datetime.now()
+    
 
     # Converts the provided List Data into Series
     namesArray = np.array(assignmentList)
@@ -23,33 +45,48 @@ def makeSchedule(assignmentList, priorityList, workloadList, isSorted, happiness
 
     # Boring DataFrame Building and Assignment
     schedule = schedule.assign(Assignments=assignmentNamesSeries)
-    schedule = schedule.assign(Workload_Per_Week=assignmentWorkloadSeries).assign(Priority=assignmentPrioritySeries)
+    schedule = schedule.assign(Workload_For_Assignment=assignmentWorkloadSeries).assign(Priority=assignmentPrioritySeries).assign(Until_Due = daysAway)
 
     # Series Math to find daily load
-    daily = schedule.get('Workload_Per_Week') / 7
+    daily = schedule.get('Workload_For_Assignment') / schedule.get('Until_Due')
+    
     daily = np.round(daily * 60, 0)
     schedule = schedule.assign(Workload_Per_Day_In_Min=daily)
 
     # Return the DataFrame Sorted
     if (isSorted == 'Priority'):
-        return schedule.sort_values(by='Priority', ascending=False).set_index('Assignments')
+        return schedule.sort_values(by='Priority')
 
     elif (isSorted == 'Workload'):
-        return schedule.sort_values(by='Workload_Per_Day_In_Min', ascending=False).set_index('Assignments')
+        return schedule.sort_values(by='Workload_Per_Day_In_Min', ascending=False)
+    
+    elif (isSorted == 'Until_Due'):
+        return schedule.sort_values(by='Until_Due')
 
     else:
-        return schedule.set_index('Assignments')
+        return schedule
+    
+def getWorkload(dataFrame):
+    workloadInNum = dataFrame.get('Workload_Per_Day_In_Min').sum()
+    return workloadInNum
+
+def highPriorityWork(dataFrame):
+    workloadInNum = dataFrame[dataFrame.get('Priority') >= 4].get('Workload_Per_Day_In_Min').sum()
+    return workloadInNum
 
 #Proxy data to test the functions
-assignmentList = ['CSE 12 Homework','CSE 15L Lab','MMW 12 Essay','DSC 40A PA','MGT 12 Homework', "Derek Sux"]
-priorityList = [5, 4, 3, 2, 1, 7]
-workloadList = [2, 3, 2, 3, 2, 0]
-isSorted = 'Workload'
+assignmentList = ['CSE 12 Homework','CSE 15L Lab','MMW 12 Essay','DSC 40A PA']
+dueDates = ['2/3/2020', '2/10/2020', '2/13/2020', '2/1/2020', ]
+priorityList = [5, 4, 3, 2]
+workloadList = [2, 3, 2, 3]
+isSorted = 'Until_Due'
 happinessIndex = 0
 
 #Sample Tables
-sampleTable = makeSchedule(assignmentList, priorityList, workloadList, isSorted, happinessIndex)
-#print(sampleTable)
+sampleTable = makeSchedule(assignmentList, priorityList, workloadList, dueDates, isSorted, happinessIndex)
+
+workload = getWorkload(sampleTable)
+highPriority = highPriorityWork(sampleTable)
 
 
 simple_page = Blueprint('simple_page', __name__, template_folder='templates')
