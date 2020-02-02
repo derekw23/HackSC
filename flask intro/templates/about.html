@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>About Us</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+
+
+<body>
+  <div class="inputsmain">
+    <div class="inputs">
+        <div id="feeling"><div class="box"><form>how are you feeling today:<br><input type="text" name="feel" value="10"><br></div></div>
+        <div id="other"></div>
+        <div id="emotion"><div class="box"><form>emotional state today:<br>
+          <select>
+            <option value="happy">happy</option>
+            <option value="depressed">depressed</option>
+            <option value="anxious">anxious</option>
+            <option value="nervous">nervous</option>
+          </select><br></div></div>
+        <div id="other2"></div>
+        <div id="sleep"><div class="box"><form>block off your sleeping schedule:<br>
+          <input type="text" name="sleep1" value="12:00am"><br>
+          <input type="text" name="sleep2" value="12:00am"><br>
+          <input type="text" name="sleep3" value="12:00am"><br>
+          <input type="text" name="sleep4" value="12:00am"><br>
+          <input type="text" name="sleep5" value="12:00am"><br>
+          <input type="text" name="sleep6" value="12:00am"><br>
+          <input type="text" name="sleep7" value="12:00am"><br></div></div>
+    </div>
+    <div class="inputs2">
+        <div id="assign"><div class="box"><form>assignments & their priorities:<br>
+          <input type="text" name="assignment1" value="None"><br>
+          <input type="text" name="assignment2" value="None"><br>
+          <input type="text" name="assignment3" value="None"><br>
+          <input type="text" name="assignment4" value="None"><br>
+          <input type="text" name="assignment5" value="None"><br>
+          <input type="text" name="assignment6" value="None"><br>
+          <input type="text" name="assignment7" value="None"><br></div></div>
+        <div id="other"></div>
+        <div id="google"><div class="box"><form>google calendar email:<br><input type="text" name="feel"><br></div></div>
+        <div id="other2"></div>
+        <div id="button"><button type="button">submit</button></div>
+    </div>
+    <div class="extra"><a id="about" href="about">about</a>
+    <a id="home" href="HackSCHomePage">home</a></div>
+  </div>
+</body>
+
+
+</html>
