@@ -2,7 +2,7 @@ from flask import Flask, render_template, url_for, request
 from dataFrameTest import simple_page
 
 app = Flask(__name__)
-#app.register_blueprint(simple_page)
+app.register_blueprint(simple_page)
 help = []
 
 @app.route('/', methods=["GET"])
@@ -81,4 +81,3 @@ def addgoogle():
 
 if __name__ == '__main__':
     app.run(debug=True)
-    app.register_blueprint(simple_page)

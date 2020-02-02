@@ -14,8 +14,8 @@
   <div class="inputsmain">
     <div class="inputs">
       <form action="{{ url_for('addfeel') }}" method="post">
-        <div id="feeling"><div class="box">how are you feeling today:<br><input type="text" name="feel" value="10"><input type="submit" value="Submit" />
-      </form><br></div></div>
+        <div id="feeling"><div class="box">how are you feeling today:<br><input type="text" name="feel" value="10">
+        <input type="submit" value="submit" /></form><br></div></div>
         <div id="other"></div>
       <form action="{{ url_for('addemotion') }}" method="post">
         <div id="emotion"><div class="box">emotional state today:<br>
@@ -25,13 +25,13 @@
             <option value="anxious">anxious</option>
             <option value="nervous">nervous</option>
           </select>
-          <input type="submit" value="Submit" /></form><br></div></div>
+          <input type="submit" value="submit" /></form><br></div></div>
         <div id="other2"></div>
       <form action="{{ url_for('addsleep') }}" method="post">
         <div id="sleep"><div class="box">block off your sleeping schedule:<br>
           <input type="text" name="weekday" value="10:00pm"><br>
-          <input type="text" name="weekend" value="12:00am">
-          <input type="submit" value="Submit" /></form></div></div>
+          <input type="text" name="weekend" value="12:00am"><br>
+          <input type="submit" value="submit" /></form></div></div>
     </div>
     <div class="inputs2">
       <form action="{{ url_for('addassign') }}" method="post">
@@ -43,13 +43,13 @@
           <input type="text" name="assignment5" value="None"><br>
           <input type="text" name="assignment6" value="None"><br>
           <input type="text" name="assignment7" value="None"><br>
-      <input type="submit" value="Submit" /></form>
+      <input type="submit" value="submit" /></form>
           </div>
         </div>
         <div id="other"></div>
       <form action="{{ url_for('addgoogle') }}" method="post">
         <div id="google"><div class="box">google calendar email:<br><input type="text" name="google">
-      <input type="submit" value="Submit" /></form><br></div></div>
+      <input type="submit" value="submit" /></form><br></div></div>
         <div id="other2"></div>
         <div id="button"><button type="button">submit</button></div>
     </div>
