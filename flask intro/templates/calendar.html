@@ -1,6 +1,78 @@
 <!DOCTYPE html>
 <html>
 
+<script>
+  function inputEvents(ev){
+    let array =[];
+
+    for(let i = 0; i < 7; i++){
+      for(let j = 0; j < 15; j++) {
+        array[i].push(-1);
+      }
+    }
+
+    for(let event in ev){
+      let day = event['start'].get('date').getDay();
+      let hour = event['start'].get('date').getHours();
+
+      let row = hour;
+      let column = -1;
+
+      switch (day) {
+        case 'Sunday':
+          column=0;
+          break;
+        case 'Monday':
+          column=1;
+          break;
+        case 'Tuesday':
+          column=2;
+          break;
+        case 'Wednesday':
+          column=3;
+          break;
+        case 'Thursday':
+          column=4;
+          break;
+        case 'Friday':
+          column=5;
+          break;
+        case 'Saturday':
+          column=6;
+          break;
+        default:
+      }
+      array[row][column] = event.summary;
+    }
+
+    for(let i = 0; i < 15; i++) {
+      let table = document.getElementsByName('table')[0];
+      let newRow = table.insertRow(i+1);
+
+      let cel1 = newRow.insertCell(0);
+      let cel2 = newRow.insertCell(1);
+      let cel3 = newRow.insertCell(2);
+      let cel4 = newRow.insertCell(3);
+      let cel5 = newRow.insertCell(4);
+      let cel6 = newRow.insertCell(5);
+      let cel7 = newRow.insertCell(6);
+
+      cel1.innerHTML = array[i][0];
+      cel2.innerHTML = array[i][1];
+      cel3.innerHTML = array[i][2];
+      cel4.innerHTML = array[i][3];
+      cel5.innerHTML = array[i][4];
+      cel6.innerHTML = array[i][5];
+      cel7.innerHTML = array[i][6];
+
+    }
+
+
+  }
+
+</script>
+
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,53 +87,7 @@
     <div class="calendar">
       <table>
         <tr>
-          <th>Sunday</th><th>Monday</th><th>Tuesday</th><th>Wednesday</th><th>Thursday</th><th>Friday</th><th>Saturday</th>
-        </tr>
-        <tr>
-          <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-        </tr>
-        <tr>
-          <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-        </tr>
-        <tr>
-          <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-        </tr>
-        <tr>
-          <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-        </tr>
-        <tr>
-          <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-        </tr>
-        <tr>
-          <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-        </tr>
-        <tr>
-          <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-        </tr>
-        <tr>
-          <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-        </tr>
-        <tr>
-          <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-        </tr>
-        <tr>
-          <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-        </tr>
-        <tr>
-          <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-        </tr>
-        <tr>
-          <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-        </tr>
-        <tr>
-          <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-        </tr>
-        <tr>
-          <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-        </tr>
-        <tr>
-          <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
-        </tr>
+          <th>Sunday</th><th>Monday</th><th>Tuesday</th><th>Wednesday</th><th>Thursday</th><th>Friday</th><th>Saturday</th>{{(ev)['summary']}}<th>
       </table>
     </div>
     <div class="assignments">assignments list</div>

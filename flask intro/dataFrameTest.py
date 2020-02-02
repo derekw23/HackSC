@@ -118,20 +118,13 @@ sampleTable = makeSchedule(assignmentList, priorityList, workloadList, dueDates,
 #def planEvents():
 
 simple_page = Blueprint('simple_page', __name__, template_folder='templates')
-@simple_page.route('/tester', methods = ("POST","GET"))
+@simple_page.route('/calendar', methods = ("POST","GET"))
 def html_table():
 
-    #print(requesst)
-    names = request.form['name']
-    #hours = request.GET['js_hours']
-    #prios = request.GET['js_prios']
+    events = quickstart.getEvents()
+    return render_template('calendar.html',  ev=events)
 
-    #print(names)
 
-   # sampleTable = makeSchedule(names, prios, hours, dueDates, 'Priority', happinessIndex)
-    return render_template('tester.html',  tables=[sampleTable.to_html(classes='data')], titles=sampleTable.columns.values)
-
-events = quickstart.getEvents()
 
 
 

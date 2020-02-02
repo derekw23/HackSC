@@ -1,8 +1,10 @@
 from flask import Flask, render_template, url_for, request
 import dataFrameTest as dft
+from dataFrameTest import simple_page
 
 app = Flask(__name__)
-#app.register_blueprint(simple_page)
+app.register_blueprint(simple_page)
+
 feels = []
 emotions = []
 sleeps = []
@@ -17,9 +19,9 @@ def index():
 def inputs():
     return render_template('inputs.html')
 
-@app.route('/calendar', methods=["GET"])
-def calendar():
-    return render_template('calendar.html')
+#@app.route('/calendar', methods=["GET"])
+#def calendar():
+#    return render_template('calendar.html')
 
 @app.route('/notinputs', methods=["GET"])
 def notinputs():
