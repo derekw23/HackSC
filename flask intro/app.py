@@ -17,9 +17,9 @@ def inputs():
 def calendar():
     return render_template('calendar.html')
 
-@app.route('/about', methods=["GET"])
-def about():
-    return render_template('about.html')
+@app.route('/notinputs', methods=["GET"])
+def notinputs():
+    return render_template('notinputs.html')
 
 @app.route('/HackSCHomePage', methods=["GET"])
 def HackSCHomePage():
@@ -30,14 +30,14 @@ def addfeel():
     feel = request.form["feel"]
     help.append(feel)
     print(help)
-    return render_template('about.html', feel=feel)
+    return render_template('inputs.html', feel=feel)
 
 @app.route('/addemotion', methods = ['POST', 'GET'])
 def addemotion():
     emotion = request.form["emotion"]
     help.append(emotion)
     print(help)
-    return render_template('about.html', emotion=emotion)
+    return render_template('inputs.html', emotion=emotion)
 
 @app.route('/addsleep', methods = ['POST', 'GET'])
 def addsleep():
@@ -48,7 +48,7 @@ def addsleep():
     sleep.append(weekend)
     help.append(sleep)
     print(help)
-    return render_template('about.html', weekday=weekday, weekend=weekend)
+    return render_template('inputs.html', weekday=weekday, weekend=weekend)
 
 @app.route('/addassign', methods = ['POST', 'GET'])
 def addassign():
@@ -69,14 +69,14 @@ def addassign():
     assigns.append(a7)
     help.append(assigns)
     print(help)
-    return render_template('about.html', a1=a1, a2=a2, a3=a3, a4=a4, a5=a5, a6=a6, a7=a7)
+    return render_template('inputs.html', a1=a1, a2=a2, a3=a3, a4=a4, a5=a5, a6=a6, a7=a7)
 
 @app.route('/addgoogle', methods = ['POST', 'GET'])
 def addgoogle():
     google = request.form["google"]
     help.append(google)
     print(help)
-    return render_template('about.html', google=google)
+    return render_template('inputs.html', google=google)
 
 
 if __name__ == '__main__':
